@@ -13,7 +13,7 @@ import org.springframework.stereotype.Controller;
  * 对应web.xml ContextLoaderListener的配置
  * 不扫描Controller注解
  */
-@Configuration
+@Configuration //相当于applicationContext.xml
 @ComponentScan(basePackages = "cn.springSecurity.springmvc",excludeFilters = {
         @ComponentScan.Filter(type = FilterType.ANNOTATION,value = Controller.class)})
 public class ApplicationConfig {
