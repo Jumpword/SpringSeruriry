@@ -3,6 +3,7 @@ package cn.springSecurity.springmvc.config;
 import org.springframework.context.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -27,5 +28,10 @@ public class WebConfig implements WebMvcConfigurer {
         viewResolver.setPrefix("/WEB-INF/views/");
         viewResolver.setSuffix(".jsp");
         return viewResolver;
+    }
+    //设置初始打开页面
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("login");
     }
 }
